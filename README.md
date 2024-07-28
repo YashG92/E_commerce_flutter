@@ -27,7 +27,7 @@ A new Flutter project.
 
 # --------------  INITIALIZATION  ---------------- #
 
-┌─── GETTING STARTED ──────────────────────────────────────────────────────────────────────────────┐
+┌─── GETTING STARTED ─────-────────────────────────────────────────────────────────────────────────┐
 |                                                                                                  |
 |    1️⃣ Initialize Packages: Begin by fetching all necessary packages.                             |
 |       Execute the following in your terminal: `flutter pub get`.                                 |
