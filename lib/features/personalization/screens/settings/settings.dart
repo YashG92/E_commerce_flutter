@@ -8,6 +8,7 @@ import 'package:t_store/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:t_store/common/widgets/text/section_heading.dart';
 import 'package:t_store/features/personalization/screens/address/address.dart';
 import 'package:t_store/features/personalization/screens/profile/profile.dart';
+import 'package:t_store/features/shop/screens/order/order.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
@@ -76,7 +77,7 @@ class SettingsScreen extends StatelessWidget {
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subtitle: 'Track or Details of Order',
-                    onTap: () {},
+                    onTap: () =>Get.to(()=> OrderListScreen()),
                   ),
                   TSettingsMenuTile(
                     icon: Iconsax.bank,
