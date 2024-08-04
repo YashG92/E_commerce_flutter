@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 
 import 'package:t_store/common/widgets/text/product_price_text.dart';
+import 'package:t_store/features/shop/screens/cart/widgets/cart_items.dart';
+import 'package:t_store/features/shop/screens/checkout/checkout.dart';
 
 import 'package:t_store/utils/constants/sizes.dart';
 
@@ -23,38 +26,14 @@ class CartScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.all(TSizes.defaultSpace),
-        child: ListView.separated(
-          shrinkWrap: true,
-          separatorBuilder: (_, __) => SizedBox(
-            height: TSizes.spaceBtwSections,
-          ),
-          itemCount: 10,
-          itemBuilder: (_, index) => Column(
-            children: [
-              TCartItem(),
-              SizedBox(height: TSizes.spaceBtwItems,),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(width: 70,),
-                      ///Add remove button
-
-                      TProductQuantityWithAddRemoveButton(),
-                    ],
-                  ),
-                  TProductPriceText(price: '2500'),
-                ],
-              )
-            ],
-          ),
-        ),
+        /// Item in Cart
+        child: TCartItems() ,
       ),
+
+      ///Checkout Button
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: ElevatedButton(onPressed: (){}, child: Text('Checkout ₹25000')),
+        child: ElevatedButton(onPressed: ()=> Get.to(()=> CheckoutScreen()), child: Text('Checkout ₹25000')),
       ),
     );
   }
