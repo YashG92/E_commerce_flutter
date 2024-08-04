@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
+import 'package:t_store/common/widgets/layouts/grid_layout.dart';
+import 'package:t_store/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 class AllProducts extends StatelessWidget {
@@ -21,10 +23,23 @@ class AllProducts extends StatelessWidget {
               DropdownButtonFormField(
                   decoration: InputDecoration(prefixIcon: Icon(Iconsax.sort)),
                   items: [
-                    'Name', 'Higher Price', 'Lower Price', 'Sale', 'Newest', 'Popularity'
-                  ].map((option)=> DropdownMenuItem(child: Text(option), value: option,) ).toList(),
+                    'Name',
+                    'Higher Price',
+                    'Lower Price',
+                    'Sale',
+                    'Newest',
+                    'Popularity'
+                  ]
+                      .map((option) => DropdownMenuItem(
+                            child: Text(option),
+                            value: option,
+                          ))
+                      .toList(),
+                  onChanged: (value) {}),
 
-                  onChanged: (value) {})
+              SizedBox(height: TSizes.spaceBtwSections,),
+              /// Products
+              TGridLayout(itemCount: 7, itemBuilder: (_,index) => TProductCardVertical())
             ],
           ),
         ),
