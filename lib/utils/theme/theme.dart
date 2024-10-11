@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:t_store/utils/theme/widget_themes/appbar_theme.dart';
 import 'package:t_store/utils/theme/widget_themes/bottom_sheet_theme.dart';
 import 'package:t_store/utils/theme/widget_themes/checkbox_theme.dart';
@@ -29,12 +28,11 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
-    
   );
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: GoogleFonts.lato().fontFamily,
+    fontFamily: 'Poppins',
     disabledColor: TColors.grey,
     brightness: Brightness.dark,
     primaryColor: TColors.primary,

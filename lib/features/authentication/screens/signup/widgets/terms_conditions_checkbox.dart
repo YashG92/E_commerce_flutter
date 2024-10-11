@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:t_store/features/authentication/controllers/signup/signup_controller.dart';
 
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
@@ -12,6 +14,7 @@ class TTermsAndConditionCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = SignupController.instance;
     final dark = THelperFunctions.isDarkMode(context);
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 8.0), // Provide some padding to avoid overflow
@@ -20,7 +23,7 @@ class TTermsAndConditionCheckbox extends StatelessWidget {
           SizedBox(
               height: 24,
               width: 24,
-              child: Checkbox(value: true, onChanged: (value) {})),
+              child: Obx(()=> Checkbox(value: controller.privacyPolicy.value, onChanged: (value)=> controller.privacyPolicy.value= !controller.privacyPolicy.value))),
           const SizedBox(
             width: TSizes.spaceBtwItems,
           ),
