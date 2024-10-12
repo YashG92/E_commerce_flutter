@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
+import 'package:t_store/features/personalization/controller/user_controller.dart';
 
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/helpers/network_manager.dart';
@@ -16,6 +17,7 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
 
   @override
@@ -65,6 +67,37 @@ class LoginController extends GetxController {
 
       // Show some Generic error to user
       TLoaders.warningSnackBar(title: 'Oh Bad!', message: e.toString());
+    }
+  }
+
+  /// Google Sign in Auth
+  Future<void> googleSignIn() async{
+    try{
+      //Start Loading
+      TFullScreenLoader.openLoadingDialog('Logging In...', TImages.docerAnimation);
+
+      //Check Internet Connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        TFullScreenLoader.stopLoading();
+
+        return;
+      }
+
+      //Google Authentication
+      final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
+
+      //Save user record
+      await userController.saveUserRecord(userCredentials);
+
+      //Remove Loader
+      TFullScreenLoader.stopLoading();
+
+      //Redirect
+      AuthenticationRepository.instance.screenRedirect();
+    }catch(e){
+      TFullScreenLoader.stopLoading();
+      TLoaders.errorSnackBar(title: 'Oh Bad', message: e.toString());
     }
   }
 }
