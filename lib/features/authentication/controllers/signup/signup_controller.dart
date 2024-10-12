@@ -33,10 +33,14 @@ void signup() async {
       //Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
+        TFullScreenLoader.stopLoading();
+
         return;
       }
       //Form Validation
       if (!signupFormKey.currentState!.validate()) {
+        TFullScreenLoader.stopLoading();
+
         return;
       }
       //Privacy Policy Check
@@ -61,18 +65,19 @@ void signup() async {
 
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);
-      
+      TFullScreenLoader.stopLoading();
+
+
       //Show Success Message
       TLoaders.successSnackBar(title: 'Congrats', message: 'Account has been created successfully! Verify email to continue');
       //Move to Verify Email Screen
       Get.to(() => const VerifyEmailScreen());
 
     } catch (e) {
+      TFullScreenLoader.stopLoading();
+
       // Show some Generic error to user
       TLoaders.warningSnackBar(title: 'Oh Bad!', message: e.toString());
-    } finally {
-      //Remove Loader
-      TFullScreenLoader.stopLoading();
     }
   }
 }

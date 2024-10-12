@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:t_store/common/styles/spacing_styles.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/text_strings.dart';
@@ -19,10 +20,8 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
             children: [
               ///Image
-              Image(
-                image: AssetImage(image),
-                width: THelperFunctions.screenWidth() * 0.6,
-              ),
+              Lottie.asset(image, width: MediaQuery.of(context).size.width * 0.6), // Display Lottie animation
+
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
