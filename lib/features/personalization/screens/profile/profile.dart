@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/images/t_circular_image.dart';
 import 'package:t_store/common/widgets/text/section_heading.dart';
+import 'package:t_store/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:t_store/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
+
+import '../../controller/user_controller.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Scaffold(
-      appBar: TAppBar(
+      appBar: const  TAppBar(
         title: Text('Profile'),
         showBackArrow: true,
       ),
@@ -43,8 +48,8 @@ class ProfileScreen extends StatelessWidget {
               TSectionHeading(title: 'Profile Information', showActionButton: false,),
               SizedBox(height: TSizes.spaceBtwItems,),
 
-              TProfileMenu(onPressed: () {  },title: 'Name', value: 'Yash G',),
-              TProfileMenu(onPressed: () {  },title: 'Username', value: 'YashG92',),
+              TProfileMenu(onPressed: () => Get.to(()=> const ChangeName()),title: 'Name', value: controller.user.value.fullName,),
+              TProfileMenu(onPressed: () {  },title: 'Username', value: controller.user.value.username,),
 
               SizedBox(height: TSizes.spaceBtwItems,),
               Divider(),
@@ -54,9 +59,9 @@ class ProfileScreen extends StatelessWidget {
               TSectionHeading(title: 'Personal Information', showActionButton: false,),
               SizedBox(height: TSizes.spaceBtwItems,),
 
-              TProfileMenu(onPressed: () {},title: 'User ID', value: '12345', icon: Icons.copy,),
-              TProfileMenu(onPressed: () {  },title: 'E-mail', value: 'yg@gmail.com',),
-              TProfileMenu(onPressed: () {  },title: 'Phone Number', value: '+91-7698409883',),
+              TProfileMenu(onPressed: () {},title: 'User ID', value: controller.user.value.id, icon: Icons.copy,),
+              TProfileMenu(onPressed: () {  },title: 'E-mail', value: controller.user.value.email,),
+              TProfileMenu(onPressed: () {  },title: 'Phone Number', value: controller.user.value.phoneNumber,),
               TProfileMenu(onPressed: () {  },title: 'Gender', value: 'Male',),
               TProfileMenu(onPressed: () {  },title: 'Date of Birth', value: '23 Dec 2003',),
               const Divider(),
@@ -64,7 +69,7 @@ class ProfileScreen extends StatelessWidget {
 
               Center(
                 child: TextButton(
-                  onPressed: (){},
+                  onPressed: ()=> controller.deleteAccountWarningPopup(),
                   child: Text('Close Account', style: TextStyle(color: Colors.red),),
                 ),
               )
