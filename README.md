@@ -46,6 +46,7 @@ graphql
 Copy code
 E_commerce_flutter_master/
 
+
 ├── android/           # Android platform-specific files
 ├── ios/               # iOS platform-specific files
 ├── lib/               # Main Flutter application code
