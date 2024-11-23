@@ -71,6 +71,8 @@ dependencies:
 firebase_core: ^latest
 firebase_auth: ^latest
 cloud_firestore: ^latest
+
+
 🛠️ Technologies Used
 Flutter: UI framework for cross-platform app development.
 Firebase: For backend services such as authentication and database.
