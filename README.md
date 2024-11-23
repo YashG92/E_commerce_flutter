@@ -45,17 +45,29 @@ flutter run
 graphql
 Copy code
 E_commerce_flutter_master/
+
 ├── android/           # Android platform-specific files
+
 ├── ios/               # iOS platform-specific files
+
 ├── lib/               # Main Flutter application code
+
 │   ├── models/        # Data models
+
 │   ├── screens/       # UI screens
+
 │   ├── services/      # API and backend services
+
 │   ├── widgets/       # Reusable widgets
+
 │   └── main.dart      # Entry point of the application
+
 ├── assets/            # Images, fonts, and other static resources
+
 ├── pubspec.yaml       # Project dependencies and asset configuration
+
 ├── firebase.json      # Firebase configuration
+
 └── README.md          # Project documentation
 
 
