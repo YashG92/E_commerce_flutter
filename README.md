@@ -39,6 +39,8 @@ Run the App:
 bash
 Copy code
 flutter run
+
+
 📂 Project Structure
 graphql
 Copy code
@@ -55,6 +57,8 @@ E_commerce_flutter_master/
 ├── pubspec.yaml       # Project dependencies and asset configuration
 ├── firebase.json      # Firebase configuration
 └── README.md          # Project documentation
+
+
 🔥 Firebase Setup
 If you're planning to integrate Firebase, follow these steps:
 
@@ -72,6 +76,8 @@ Flutter: UI framework for cross-platform app development.
 Firebase: For backend services such as authentication and database.
 Dart: Programming language for Flutter.
 Kotlin/Swift: For platform-specific functionalities (if required).
+
+
 🤝 Contributing
 Contributions are welcome! Follow these steps to contribute:
 
@@ -80,8 +86,11 @@ Create a new branch (git checkout -b feature/your-feature-name).
 Commit your changes (git commit -m "Add some feature").
 Push to the branch (git push origin feature/your-feature-name).
 Create a Pull Request.
+
+
 📝 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
 
 🌟 Acknowledgements
 Flutter
