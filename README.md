@@ -11,6 +11,8 @@ Responsive Design: Optimized for mobile and web interfaces.
 Customizable UI: Built with reusable and scalable widgets.
 Product Listing and Filtering: Easy navigation through product categories.
 Secure Checkout Process: Implements secure payment workflows.
+
+
 🚀 Getting Started
 Follow these steps to get the project running on your local environment.
 
