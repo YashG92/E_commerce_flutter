@@ -5,14 +5,12 @@ import 'package:t_store/common/widgets/login_signup/social_button.dart';
 import 'package:t_store/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
 
     return Scaffold(
       appBar: AppBar(),

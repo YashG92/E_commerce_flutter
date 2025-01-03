@@ -1,11 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:t_store/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:t_store/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:t_store/features/shop/screens/all_products/all_products.dart';
 import 'package:t_store/features/shop/screens/home/widgets/home_appbar.dart';
@@ -14,12 +8,8 @@ import 'package:t_store/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/device/device_utility.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
-import '../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
-import '../../../../common/widgets/images/t_rounded_image.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/text/section_heading.dart';
 
@@ -34,12 +24,12 @@ class HomeScreen extends StatelessWidget {
           children: [
             ///Header
 
-            TPrimaryHeaderContainer(
+           const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   ///Appbar
                   THomeAppBar(),
-                  const SizedBox(
+                   SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
 
@@ -48,14 +38,14 @@ class HomeScreen extends StatelessWidget {
                   TSearchContainer(
                     text: 'Search',
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
 
                   ///Categories
 
                   Padding(
-                    padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
                         TSectionHeading(
@@ -63,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                           showActionButton: false,
                           textColor: TColors.white,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: TSizes.spaceBtwItems,
                         ),
 
@@ -84,7 +74,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   ///PromoSlider
-                  TPromoSlider(
+                  const TPromoSlider(
                     banners: [
                       TImages.promoBanner1,
                       TImages.promoBanner2,
@@ -94,13 +84,13 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
-                  TSectionHeading(title: 'Popular Products', onPressed: ()=> Get.to(()=> AllProducts()),),
+                  TSectionHeading(title: 'Popular Products', onPressed: ()=> Get.to(()=> const AllProducts()),),
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
 
                   /// Popular Products
-                  TGridLayout(itemCount: 2, itemBuilder: (_,index) => TProductCardVertical(),),
+                  TGridLayout(itemCount: 2, itemBuilder: (_,index) => const TProductCardVertical(),),
                 ],
               ),
             )

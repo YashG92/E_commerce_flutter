@@ -10,7 +10,6 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
-import '../../../styles/shadows.dart';
 import '../../icons/t_circular_icon.dart';
 
 class TProductCardHorizontal extends StatelessWidget {
@@ -50,7 +49,7 @@ class TProductCardHorizontal extends StatelessWidget {
                   child: TRoundedContainer(
                     radius: TSizes.sm,
                     backgroundColor: TColors.secondary.withOpacity(0.8),
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                         horizontal: TSizes.sm, vertical: TSizes.xs),
                     child: Text(
                       '25%',

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
-import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/features/personalization/screens/address/add_new_address.dart';
 import 'package:t_store/features/personalization/screens/address/widgets/single_address.dart';
 import 'package:t_store/utils/constants/colors.dart';
@@ -15,12 +14,12 @@ class UserAddressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.to(() => AddNewAddressScreen()),
-        child: Icon(
+        onPressed: () => Get.to(() => const AddNewAddressScreen()),
+        backgroundColor: TColors.primary,
+        child: const Icon(
           Iconsax.add,
           color: TColors.white,
         ),
-        backgroundColor: TColors.primary,
       ),
       appBar: TAppBar(
         showBackArrow: true,
@@ -29,7 +28,7 @@ class UserAddressScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
           children: [

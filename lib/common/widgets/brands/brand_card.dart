@@ -20,7 +20,7 @@ class TBrandCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: TRoundedContainer(
-        padding: EdgeInsets.all(TSizes.sm),
+        padding: const EdgeInsets.all(TSizes.sm),
         showBorder: showBorder,
         backgroundColor: Colors.transparent,
         child: Row(
@@ -31,12 +31,12 @@ class TBrandCard extends StatelessWidget {
                 isNetworkImage: false,
                 image: TImages.clothIcon,
                 backgroundColor: Colors.transparent,
-                overlayColor: THelperFunctions.isDarkMode(context)
+                overlayColor: dark
                     ? TColors.white
                     : TColors.black,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: TSizes.spaceBtwItems / 2,
             ),
 
@@ -46,7 +46,7 @@ class TBrandCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TBrandTitleWithVerifiedIcon(
+                  const TBrandTitleWithVerifiedIcon(
                     title: 'Nike',
                   ),
                   Text(

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/brands/brand_card.dart';
 import 'package:t_store/common/widgets/layouts/grid_layout.dart';
-import 'package:t_store/common/widgets/products/sortable/sortable_products.dart';
 import 'package:t_store/common/widgets/text/section_heading.dart';
 import 'package:t_store/features/shop/screens/brand/brand_products.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -15,18 +13,18 @@ class AllBrandsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TAppBar(
+      appBar: const TAppBar(
         title: Text('Brand'),
         showBackArrow: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
               /// Heading
-              TSectionHeading(title: 'Brands'),
-              SizedBox(
+              const TSectionHeading(title: 'Brands'),
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
@@ -36,7 +34,7 @@ class AllBrandsScreen extends StatelessWidget {
                 mainAxisExtent: 80,
                 itemBuilder: (context, index) => TBrandCard(
                   showBorder: true,
-                  onTap: () => Get.to(() => BrandProducts()),
+                  onTap: () => Get.to(() => const BrandProducts()),
                 ),
               ),
             ],

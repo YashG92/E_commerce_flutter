@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
-import 'package:t_store/common/widgets/appbar/appbar.dart';
-import 'package:t_store/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
-import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
-import 'package:t_store/common/widgets/images/t_rounded_image.dart';
 import 'package:t_store/common/widgets/text/section_heading.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/product_attribute.dart';
@@ -13,43 +9,39 @@ import 'package:t_store/features/shop/screens/product_details/widgets/product_de
 import 'package:t_store/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/rating_share_widget.dart';
 import 'package:t_store/features/shop/screens/product_reviews/product_reviews.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
-      bottomNavigationBar: TBottomAddToCart(),
+      bottomNavigationBar: const TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Product Image Slider
-            TProductImageSlider(),
+            const TProductImageSlider(),
 
             /// Product Details
             Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                   right: TSizes.defaultSpace,
                   left: TSizes.defaultSpace,
                   bottom: TSizes.defaultSpace),
               child: Column(
                 children: [
                   /// Rating &Share
-                  TRatingAndShare(),
+                  const TRatingAndShare(),
 
                   /// Price, Title, Stack & Brand
-                  TProductMetaData(),
+                  const TProductMetaData(),
 
                   /// Attributes
 
-                  ProductAttributes(),
-                  SizedBox(
+                  const ProductAttributes(),
+                  const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
 
@@ -57,20 +49,20 @@ class ProductDetailScreen extends StatelessWidget {
                   SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                          onPressed: () {}, child: Text('Checkout'))),
-                  SizedBox(
+                          onPressed: () {}, child: const Text('Checkout'))),
+                  const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
 
                   /// Description
-                  TSectionHeading(
+                  const TSectionHeading(
                     title: 'Description',
                     showActionButton: false,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  ReadMoreText(
+                  const ReadMoreText(
                       'kshgsih s hewhguh w iwh i hkwhskw f ow oh tuihekhgks  ihwh  ugfkshgkhsh kwh iufhushgkk uh uwhh guhskh  guhh gkwkgh kurhugh ks huhuhhwrgu  uihuwhfkhsk  uihwhfjgjhh   hhdghh d hf',
                   trimLines: 2,
                     trimMode: TrimMode.Line,
@@ -81,16 +73,16 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
 
                   /// Reviews
-                  Divider(),
-                  SizedBox(height: TSizes.spaceBtwItems,),
+                  const Divider(),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TSectionHeading(title: 'Reviews(123)', showActionButton: false,),
-                      IconButton(onPressed: ()=> Get.to(() => ProductReviewsScreen()), icon: Icon(Iconsax.arrow_right_3, size: 18,)),
+                      const TSectionHeading(title: 'Reviews(123)', showActionButton: false,),
+                      IconButton(onPressed: ()=> Get.to(() => const ProductReviewsScreen()), icon: const Icon(Iconsax.arrow_right_3, size: 18,)),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
                 ],

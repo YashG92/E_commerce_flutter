@@ -6,9 +6,7 @@ import 'package:t_store/features/authentication/screens/onboarding/widgets/onboa
 import 'package:t_store/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:t_store/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -42,10 +40,10 @@ class OnBoardingScreen extends StatelessWidget {
 
         ///Skip Button
         const OnBoardingSkip(),
-        ///Dot Naviagtion SmoothPageIndicator
-        OnBoardingDotNavigation(),
+        ///Dot Navigation SmoothPageIndicator
+        const OnBoardingDotNavigation(),
         ///Circular Button
-        OnBoardingNextButton()
+        const OnBoardingNextButton()
       ],
     ));
   }
