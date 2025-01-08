@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_store/common/styles/shimmer.dart';
+import 'package:t_store/common/widgets/shimmer/shimmer.dart';
 import 'package:t_store/features/personalization/controller/user_controller.dart';
 
 import '../../../../../common/widgets/appbar/appbar.dart';
